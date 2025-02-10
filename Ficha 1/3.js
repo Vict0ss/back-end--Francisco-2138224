@@ -10,4 +10,7 @@ function sumFirstNIntegers(N) {
 
 // Exemplo de uso:
 var N = 5;
-console.log(sumFirstNIntegers(N));  // Saída: 15, pois 1+2+3+4+5 = 15
+console.log(sumFirstNIntegers(N));  
+console.log("Pressione Enter para sair...");
+process.stdin.resume();
+process.stdin.on("data", () => process.exit());
