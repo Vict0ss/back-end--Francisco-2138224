@@ -1,7 +1,13 @@
-""" devolve a soma dos primeiros N numeris inteiros, 5   1+2+3+4+5= """
+function sumFirstNIntegers(N) {
+    var sum = 0;
+    
+    for (var i = 1; i <= N; i++) {
+        sum += i;
+    }
+    
+    return sum;
+}
 
-function sum (val)
-    var res=1;
-
-    for(var i=2 ; i =)
-
+// Exemplo de uso:
+var N = 5;
+console.log(sumFirstNIntegers(N));  // Saída: 15, pois 1+2+3+4+5 = 15
