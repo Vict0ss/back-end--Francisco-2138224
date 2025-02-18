@@ -1,19 +1,23 @@
 ///<> {}
-
-function started ()  {
-    console.log("started Download")
+function performDownload(startedFn, updateFn, completedFn) {
+    startedFn();
+    let progress = 0;
+    const download = setInterval(() => {
+        progress += 1;
+        updateFn(progress);
+        if (progress === 5) {
+            clearInterval(download);
+            completedFn();
+        }
+    }, 1000);
 }
-function update ()  {
-    console.log("Download + vue+ 1%")
+function started() {
+    console.log("Started Download");
 }
-function completed ()  {
-    console.log("completed Download")
+function update(progress) {
+    console.log(`${progress}% of Download`);
 }
-function performDownload (started, update,completed) ;
-    started();
-    for(let i = 0; i <= 100; i++){
-        update
-    }
-
-    var arrayutils = requiere('./arrayUtils.js');
-    arrayutils.isEmmpty
+function completed() {
+    console.log("Download Completed");
+}
+performDownload(started, update, completed);
