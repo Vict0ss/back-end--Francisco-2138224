@@ -7,11 +7,6 @@ var age = Object.create(idade);
 var gender = Object.create(genero);
 
 
-
-
-
-
-
 const express = require('express')
 const fs = require(fs);
 const app = express()
