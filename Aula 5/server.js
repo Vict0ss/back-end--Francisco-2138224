@@ -28,26 +28,22 @@ app.delete('/users/:id', (req, res) => {
   let { id } = req.params; // esta pegando o id do endereço de cima
   let data = JSON.parse(fs.readFileSync("persons.json", "utf8")); // pegando os dados do arquivo
   let filteredData = data.data.filter(i => i.id.toString() !== id.toString()); //filtrando os dados 
-
   if (filteredData.length === data.data.length) { //verificando  se utilizador existe 
     return res.status(404).send("Utilizador não encontrado!"); // mensagsem caso nao econtre o utilizador 
   }
-
   data.data = filteredData; //pegando a listra filtrada e subtistuindo a lista do adquivo
   fs.writeFileSync("persons.json", JSON.stringify(data)); // criando nova lista
   res.send(data);// devolvendo pro utilizador a nova lista
 });
 app.get('/users/:id', (req, res) => { // caminho para o codigo, id é o valor que esta no codigo no .json
-  const { id } = req.params; // e tudo que utilizador coloca na url 
-  const data = JSON.parse(fileContent).data.find((i) => i.id.toString() == id.toString()) // parecido ao some, pega intem do array e traz apenas o id ou valor que o utilizador pedir  
+  var  { id } = req.params; // e tudo que utilizador coloca na url 
+  var data = JSON.parse(fileContent).data.find((i) => i.id.toString() == id.toString()) // parecido ao some, pega intem do array e traz apenas o id ou valor que o utilizador pedir  
   if (data) { // isto e pra saber se tem  
     res.send(data)  //   eviando a resposta  
   } else {   // se nao tiver o id irá mandar a mensagem em baixo
-    res.send('Não foi encontrado nenhum dado!')
+    res.status(404).send('Não foi encontrado nenhum dado!')
   }
 })
-
-
 app.put('/users/:id', (req, res) => {
   const { id } = req.params; // pegando id do endereço 
   let { firstname, lastname, profission, age, gender } = req.body;  // pegando cada informaçao
@@ -65,7 +61,6 @@ app.put('/users/:id', (req, res) => {
     res.send('Não foi encontrado nenhum dado!') // informando resposta caso nao seja econtrado nada 
   }
 })
-
 app.listen(port, () => { // qual porta abrir 
   console.log(`Example app listening on port ${port}`) // dizer que abriu
 })
