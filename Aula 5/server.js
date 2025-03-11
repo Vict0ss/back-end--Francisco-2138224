@@ -1,6 +1,6 @@
-const express = require('express') // biblioteca express
-const fs = require("fs"); // biblioteca fs 
-const { pid } = require('process'); //
+const express = require('express') 
+const fs = require("fs"); 
+const { pid } = require('process'); 
 const app = express()
 const port = 3000
 
@@ -35,6 +35,7 @@ app.delete('/users/:id', (req, res) => {
   fs.writeFileSync("persons.json", JSON.stringify(data)); // criando nova lista
   res.send(data);// devolvendo pro utilizador a nova lista
 });
+
 app.get('/users/:id', (req, res) => { // caminho para o codigo, id é o valor que esta no codigo no .json
   var  { id } = req.params; // e tudo que utilizador coloca na url 
   var data = JSON.parse(fileContent).data.find((i) => i.id.toString() == id.toString()) // parecido ao some, pega intem do array e traz apenas o id ou valor que o utilizador pedir  
@@ -46,9 +47,9 @@ app.get('/users/:id', (req, res) => { // caminho para o codigo, id é o valor qu
 })
 app.put('/users/:id', (req, res) => {
   const { id } = req.params; // pegando id do endereço 
-  let { firstname, lastname, profission, age, gender } = req.body;  // pegando cada informaçao
-  let data = JSON.parse(fs.readFileSync("persons.json", "utf8")); // pegando os dados do arquivo
-  let item = data.data.find((i) => i.id.toString() == id.toString()) // pegando os dados do arquivo e filtrando com coodição do id 
+  var { firstname, lastname, profission, age, gender } = req.body;  //  cada informaçao
+  var data = JSON.parse(fs.readFileSync("persons.json", "utf8")); //  os dados do arquivo
+  var item = data.data.find((i) => i.id.toString() == id.toString()) //  os dados do arquivo e filtrando com coodição do id 
   if (item) { // verificando se foi econtrado as informaçoes 
     item.firstname = firstname
     item.lastname = lastname
@@ -62,5 +63,5 @@ app.put('/users/:id', (req, res) => {
   }
 })
 app.listen(port, () => { // qual porta abrir 
-  console.log(`Example app listening on port ${port}`) // dizer que abriu
+  console.log(`Example app listening on port ${port}`) 
 })

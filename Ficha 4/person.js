@@ -28,3 +28,4 @@ console.log(person2.greet());
 
 console.log("Person1 __proto__:", person1.__proto__);
 console.log("Same prototype:", person1.__proto__ === person2.__proto__);
+
