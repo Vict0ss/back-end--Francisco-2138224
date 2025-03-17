@@ -21,6 +21,29 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+function log(req,res){
+  var path = req.rout.path;
+  var method = req.method;
+  var Date = new Date();
+
+  var str ="Path: " + path + "method" + method + "date: "+ Date;
+  fstat.appendFileSync("log.txt",str);
+}
+
+
+
+app.get("/", (req,res) => {
+  log(req,res);
+  var body = "Hello World";
+  res.writeHead(200,{
+      "content-length": Buffer.bytelength(body),
+      "content-length": "text/plain"
+  })
+  res.end(body);
+})
+
+
+console.log("mensagem de saudação")
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -76,6 +99,7 @@ function onError(error) {
       throw error;
   }
 }
+
 
 /**
  * Event listener for HTTP server "listening" event.
