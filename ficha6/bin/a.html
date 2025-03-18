@@ -1,0 +1,56 @@
+app.get("/", (req,res) => {
+  log(req,res);
+  var body = "Hello World";
+  res.writeHead(200,{
+      "content-length": Buffer.bytelength(body),
+      "content-length": "text/plain"
+  })
+  res.end(body);
+})
+
+app.get("/html", (req,res) =>{
+  var body ="<html><h1>Hello World!</html></h1>"
+  res.writeHead(200,{
+      "content-length": Buffer.bytelength(body),
+      "content-length": "text/html"
+  })
+  res.end(body);
+})
+   
+app.get("/html", (req,res) =>{
+    var body = fs.readFileSync ('.index.html', "utf-8");
+    res.writeHead(200,{
+      "content-length": Buffer.bytelength(body),
+      "content-length": "text/html"
+  })
+  res.end(body);
+})
+
+app.post("/html", (req,res) =>{
+  var str = "hello teste";
+  var newStr=String.replace("test",new Data());
+  res.writeHead(200,{
+    "content-length": Buffer.bytelength(body),
+})
+res.end(body);
+})
+
+
+app.get("/user", (req, res) => {
+  log(req, res);
+  var name = req.query.name;
+
+  if (!name) {
+    res.writeHead(400, { "Content-Type": "text/plain" });
+    res.end("Parâmetro 'name' não fornecido.");
+    return;
+  }
+
+  var body = `<html><h1>Olá, ${name}! palavras  aleatorio para funcionar!</h1></html>`;
+
+  res.writeHead(200, {
+    "Content-Length": Buffer.byteLength(body),
+    "Content-Type": "text/html"
+  });
+  res.end(body);
+});

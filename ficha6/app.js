@@ -20,6 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware para registrar pedidos no log.txt
+app.use((req, res, next) => {
+    const log = `${new Date().toISOString()} - ${req.method} ${req.url}\n`;
+    fs.appendFileSync(path.join(__dirname, 'log.txt'), log);
+    next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -41,3 +47,8 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+const http = require('http');
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+server.listen(port, () => {
+});
