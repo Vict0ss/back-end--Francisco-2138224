@@ -63,3 +63,7 @@ Path: /html, Method: GET, Date: Tue Mar 18 2025 17:13:00 GMT+0000 (Hora de Green
 Path: /html, Method: GET, Date: Tue Mar 18 2025 17:13:01 GMT+0000 (Hora de Greenwich)
 Path: /html, Method: GET, Date: Tue Mar 18 2025 17:13:03 GMT+0000 (Hora de Greenwich)
 Path: /html, Method: GET, Date: Tue Mar 18 2025 17:13:11 GMT+0000 (Hora de Greenwich)
+Path: /, Method: GET, Date: Thu Mar 20 2025 15:04:50 GMT+0000 (Hora de Greenwich)
+Path: /html, Method: GET, Date: Thu Mar 20 2025 15:06:24 GMT+0000 (Hora de Greenwich)
+Path: /file, Method: GET, Date: Thu Mar 20 2025 15:10:08 GMT+0000 (Hora de Greenwich)
+Path: /file, Method: GET, Date: Thu Mar 20 2025 15:10:19 GMT+0000 (Hora de Greenwich)
