@@ -2,6 +2,8 @@
   "dependencies": {
     "express": "^4.21.2",
     "mysql": "^2.18.1",
+    "mysql2": "^3.14.0",
+    "sequelize": "^6.37.7",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
