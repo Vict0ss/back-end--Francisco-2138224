@@ -1,10 +1,21 @@
 const express = require('express');
 const mysql = require('mysql');
-const swaggerAutogen = require('swagger-autogen');
+const swaggerAutogen = require('swagger-autogen')();
+const swaggerui = require('swagger-ui-express');
 const app = express();
 const port = 3000;
 
-app.use(express.json());
+const swaggerFile = require('./swagger_output.json');
+
+const doc = {
+    info: {
+        title: 'Minha API',
+        description: 'Descrição da API'
+    },
+    host: 'localhost:3000',
+    schemes: ['http']
+};
+
 
 const connection = mysql.createConnection({
     user: 'root',
