@@ -17,16 +17,7 @@ const doc = {
 };
 
 
-const connection = mysql.createConnection({
-    user: 'root',
-    password: 'password',
-    host: 'localhost',
-    database: 'backend'
-});
 
-connection.connect(err => {
-    if (err) throw err;
-});
 
 app.get('/users', (req, res) => { 
     connection.query("SELECT * FROM user", (error, results) => {

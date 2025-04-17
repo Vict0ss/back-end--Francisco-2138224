@@ -1,7 +1,18 @@
 {
   "dependencies": {
+    "express": "^5.1.0",
     "mysql2": "^3.14.0",
     "sequelize": "^6.37.7",
     "swagger-ui-express": "^5.0.1"
-  }
+  },
+  "name": "ficha9",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
