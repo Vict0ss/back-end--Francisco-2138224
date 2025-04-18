@@ -16,9 +16,6 @@ const doc = {
     schemes: ['http']
 };
 
-
-
-
 app.get('/users', (req, res) => { 
     connection.query("SELECT * FROM user", (error, results) => {
         if (error) return res.status(500).send(error);

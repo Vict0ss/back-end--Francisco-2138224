@@ -1,8 +1,0 @@
-const express = require('express') 
-const app = express()
-const port = 3000;
-
-
-const{Sequelize,Model, DataTypes} = require('sequelize');
-const  sequelize = new Sequelize('mysql://root:password@localhost:3306/Francisco_2138224_Leandro');
-    
