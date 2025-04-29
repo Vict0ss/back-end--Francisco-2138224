@@ -1,7 +1,7 @@
-const {DataTypes, Sequelize} = require('sequelize');
+const {DataTypes} = require('sequelize');
 
-module.exports = (Sequelize) => {
-    const Users = Sequelize.define('Users',{
+module.exports = (sequelize) => {
+    const Users = sequelize.define('Users',{
         user_id : {
             type: DataTypes.INTEGER,
             primaryKey: true,

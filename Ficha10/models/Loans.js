@@ -1,8 +1,9 @@
 const {DataTypes, Sequelize} = require('sequelize');
+const { loan } = require('../db_sequelize');
 
 module.exports = (Sequelize) => {
-    const Users = Sequelize.define('Books',{
-        Book_id : {
+    const Users = Sequelize.define('loans',{
+        loans_id : {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -26,14 +27,15 @@ module.exports = (Sequelize) => {
         },
         phone_number: {
             type: DataTypes.STRING(15),
-            allowNull: false,    
+            allowNull: true,    
         }
     }
+    
     , {
-        tableName: 'books',
+        tableName: 'users',
         timestamps: false,
     });
 
-    return Users;
+    return loan;
     
 }
