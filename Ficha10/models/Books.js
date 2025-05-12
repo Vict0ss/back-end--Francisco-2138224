@@ -1,30 +1,30 @@
 const {DataTypes, Sequelize} = require('sequelize');
 
 module.exports = (Sequelize) => {
-    const Users = Sequelize.define('Books',{
-        Book_id : {
+    const Users = Sequelize.define('Book',{
+        book_id : {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false,
+            allowNull: false,   
         },
-        first_name:{
+        title:{
             type: DataTypes.STRING(50),
             allowNull: false,
         },
-        last_name: {
+        author_name: {
             type: DataTypes.STRING(50),
             allowNull: false,
         },
-        email: {
+        publication_date: {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-        address : {
+        genre : {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-        phone_number: {
+        available_copies: {
             type: DataTypes.STRING(15),
             allowNull: false,    
         }

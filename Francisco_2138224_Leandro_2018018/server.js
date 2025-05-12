@@ -22,7 +22,7 @@ const doc = {
     },
     host: 'localhost:3000',
     schemes: ['http']
-};
+}; 
 
 const outputFile = './swagger_output.json';
 const endpointsFiles = ['./server.js'];
@@ -154,4 +154,4 @@ swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
     app.listen(port, () => {
         console.log(`Server running on port ${port}`); 
     });
-}); 
+});

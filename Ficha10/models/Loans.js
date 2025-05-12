@@ -9,30 +9,28 @@ module.exports = (Sequelize) => {
             autoIncrement: true,
             allowNull: false,
         },
-        first_name:{
+        user_id:{
             type: DataTypes.STRING(50),
+            foreignKey: true,
             allowNull: false,
         },
-        last_name: {
+        book_id: {
             type: DataTypes.STRING(50),
+            foreignKey: true,
             allowNull: false,
         },
-        email: {
+        loan_date: {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-        address : {
+        return_dat : {
             type: DataTypes.STRING(100),
             allowNull: false,
-        },
-        phone_number: {
-            type: DataTypes.STRING(15),
-            allowNull: true,    
         }
     }
     
     , {
-        tableName: 'users',
+        tableName: 'loans',
         timestamps: false,
     });
 
