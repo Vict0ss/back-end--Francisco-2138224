@@ -17,6 +17,8 @@ Loans.belongsTo(Book, {foreignKey: 'books_id'});
         last_name: 'nome',
         email: 'email',
         address: 'indereço',
+        password: '(umapassword)',
+        email: '(varchar)',
         phone_number: 2025
     });
     console.log(users.toJSON());
